@@ -1,4 +1,3 @@
-
 body{
   background-color: #FFFCEA;
 }
@@ -276,4 +275,116 @@ div.number-sort{
     color: #f54a00;
     background-color: none;
     border-bottom:2px solid #f54a00 ;
+}
+
+/* ========================================
+   RESPONSIVE — TAB LABELS
+======================================== */
+.turncate {
+    margin-left: 6px;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* ========================================
+   RESPONSIVE — RECIPE CARD (image/content split)
+======================================== */
+
+@media (max-width: 767.98px) {
+    .food-img {
+        height: 320px;
+    }
+
+    .food-img img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .rounded-start-5 {
+        border-radius: 2rem 2rem 0 0 !important;
+    }
+
+    .info-food {
+        padding: 16px;
+        width: 92%;
+    }
+
+    .info-food i.fs-4 {
+        font-size: 1.1rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .food-img {
+        height: 260px;
+    }
+
+    .rate {
+        left: 16px;
+        top: 16px;
+        padding-block: 6px;
+        padding-inline: 12px;
+    }
+
+    .info-food {
+        bottom: 16px;
+        padding: 12px;
+    }
+
+    .info-food span {
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE — RECIPE TABS
+======================================== */
+
+@media (max-width: 575.98px) {
+    .nav-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start !important;
+    }
+
+    .nav-tabs .nav-item {
+        flex: 0 0 auto;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 10px 12px;
+    }
+
+    .turncate {
+        max-width: 70px;
+        font-size: 14px;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE — NUTRITION GRID
+======================================== */
+
+@media (max-width: 400px) {
+    .icon {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+    }
+
+    .caloris-value {
+        font-size: 16px;
+    }
+
+    #contact-tab-pane .row > div span:not(.caloris-value) {
+        font-size: 14px;
+    }
 }
