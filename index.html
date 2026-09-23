@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-white py-3" id="mynav">
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center gap-3">
+          <span class="nav-logo"><i class="fa-solid fa-utensils"></i></span>
+          <div>
+            <h2 class="m-0 fw-bold">What's For Dinner</h2>
+            <span class="text-secondary">Your daily meal inspiration</span>
+          </div>
+        </div>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="fa-solid fa-x close-icon"></i>
+          <i class="fa-solid fa-bars open-icon"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul
+            class="navbar-nav ms-auto text-center justify-content-sm-start align-content-sm-start"
+          >
+            <li class="nav-item">
+              <a class="nav-link" href="#about"
+                ><i class="fa-solid fa-bookmark"></i
+              ></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#services"
+                ><i class="fa-solid fa-clock-rotate-left"></i
+              ></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#testmonials">
+                <i class="fa-solid fa-gear"></i>
+              </a>
+            </li>
+
+            <li class="nav-avatar">
+              <a class=" " href="#faq">
+                <img
+                  src="images/avatar-4.jpg"
+                  alt=""
+                  class="w-100 rounded-circle"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="mt-5 py-5">
+      <section class="mt-3 py-3">
+        <div class="container">
+          <div class="row bg-white rounded-5" id="dataRow">
+            <div class="col-5 p-0">
+              <div class="food-img position-relative">
+                <img
+                  src="images/photo-1603133872878-684f208fb84b.jfif"
+                  alt=""
+                  class="rounded-start-5"
+                />
+                <div class="rate">
+                  <i class="fa-solid fa-star text-warning"></i>
+                  <span class="p-color fw-bold">4.6</span>
+                  <span class="text-secondary">(278 reviews)</span>
+                </div>
+
+                <div class="info-food">
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-1">
+                      <i class="fa-solid fa-clock fs-4 text-warning"></i>
+                      <span class="text-secondary">Prep Time</span>
+                      <span class="p-color fw-bold">15 min</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-1">
+                      <i class="fa-solid fa-fire-burner fs-4 text-danger"></i>
+                      <span class="text-secondary">Cook Time</span>
+                      <span class="p-color fw-bold">20 min</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-1">
+                      <i class="fa-solid fa-users fs-4 text-primary"></i>
+                      <span class="text-secondary"> Servings</span>
+                      <span class="p-color fw-bold">4 Pepole</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-7">
+              <div class="py-4 px-3 mt-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="mb-2">
+                      <span class="badge badge-first p-2 rounded-5 me-2"
+                        >Easy</span
+                      >
+                      <span class="badge badge-second p-2 rounded-5"
+                        >italian</span
+                      >
+                    </div>
+                    <div>
+                      <h3 class="fw-bold">Chicken Stir-Fry</h3>
+                      <p class="text-secondary">
+                        Quick and healthy stir-fry with colorful vegetables
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row gap-2">
+                    <span class="icon-item"
+                      ><i class="fa-solid fa-bookmark"></i
+                    ></span>
+                    <span class="icon-item"
+                      ><i class="fa-solid fa-share-nodes"></i
+                    ></span>
+                  </div>
+                </div>
+
+              
+                <ul class="nav nav-tabs d-flex align-items-center justify-content-between" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="home-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#home-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="home-tab-pane"
+                      aria-selected="true"
+                    >
+                      <i class="fa-solid fa-list-check"></i>
+                      <span class="turncate">Ingredients</span>
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="profile-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#profile-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="profile-tab-pane"
+                      aria-selected="false"
+                    >
+                      <i class="fa-solid fa-book-open"></i>
+                      <span class="turncate">Instructions</span>
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="contact-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#contact-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="contact-tab-pane"
+                      aria-selected="false"
+                    >
+                       <i class="fa-solid fa-chart-pie"></i>
+                      <span class="turncate">Nutrition</span>
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="chef-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#chef-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="chef-tab-pane"
+                      aria-selected="false"
+                    >
+                      <i class="fa-solid fa-lightbulb"></i>
+                      <span class="turncate">Chef's Tips</span>
+                    </button>
+                  </li>
+                 
+                </ul>
+                <div class="tab-content  mt-3 border-top border-bottom" id="myTabContent">
+                  <div
+                    class="tab-pane fade show active my-3 bg-pink p-3 rounded-4"
+                    id="home-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="home-tab"
+                    tabindex="0"
+                  >
+                    <ul class="list-unstyled">
+                          <li class="d-flex align-items-start mb-2 gap-2">
+                            <span class="number-sort"> 1 </span>
+                            <span class="text-secondary"
+                              >500g chicken breast, sliced</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start mb-2 gap-2">
+                            <span class="number-sort"> 1 </span>
+                            <span class="text-secondary"
+                              >500g chicken breast, sliced</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start mb-2 gap-2">
+                            <span class="number-sort"> 2 </span>
+                            <span class="text-secondary">
+                              2 bell peppers, sliced</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start mb-2 gap-2">
+                            <span class="number-sort"> 3</span>
+                            <span class="text-secondary"
+                              >1 broccoli head, florets</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start mb-2 gap-2">
+                            <span class="number-sort"> 4 </span>
+                            <span class="text-secondary"
+                              >2 carrots, julienned</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start mb-2 gap-2">
+                            <span class="number-sort"> 5 </span>
+                            <span class="text-secondary"
+                              >3 tablespoons soy sauce</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start mb-2 gap-2">
+                            <span class="number-sort"> 6 </span>
+                            <span class="text-secondary"
+                              >2 tablespoons oyster sauce</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start mb-2 gap-2">
+                            <span class="number-sort"> 7</span>
+                            <span class="text-secondary"
+                              >1 tablespoon sesame oil</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start mb-2 gap-2">
+                            <span class="number-sort"> 8 </span>
+                            <span class="text-secondary"
+                              >2 cloves garlic, minced</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start mb-2 gap-2">
+                            <span class="number-sort"> 9 </span>
+                            <span class="text-secondary"
+                              >Fresh ginger, grated</span
+                            >
+                          </li>
+                        </ul>
+                  </div>
+                  <div
+                    class="tab-pane fade bg-pink p-3"
+                    id="profile-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab"
+                    tabindex="0"
+                  >
+                  <div class="d-flex align-items-baseline justify-content-start gap-2 mb-3">
+                       <div class="number-sort "> 1 </div>
+                            <p class="p-color pt-2"
+                              >Mix soy sauce, oyster sauce, and sesame oil for the sauce.</p
+                            >
+                  </div>
+                  <div class="d-flex align-items-baseline justify-content-start gap-2 mb-3">
+                       <div class="number-sort "> 2 </div>
+                            <p class="p-color pt-2"
+                              >Heat wok over high heat with oil. Cook chicken until golden, remove and set aside.</p
+                            >
+                  </div>
+                  <div class="d-flex align-items-baseline justify-content-start gap-2 mb-3">
+                       <div class="number-sort "> 3 </div>
+                            <p class="p-color pt-2"
+                              >Add more oil if needed. Stir-fry garlic and ginger for 30 seconds.</p
+                            >
+                  </div>
+                  <div class="d-flex align-items-baseline justify-content-start gap-2 mb-3">
+                       <div class="number-sort "> 4 </div>
+                            <p class="p-color pt-2"
+                              >Add vegetables, starting with hardest ones (carrots, broccoli). Cook for 3-4 minutes.</p
+                            >
+                  </div>
+                  <div class="d-flex align-items-baseline justify-content-start gap-2 mb-3">
+                       <div class="number-sort "> 5 </div>
+                            <p class="p-color pt-2"
+                              >Return chicken to wok, add bell peppers and sauce. Toss for 2 minutes.</p
+                            >
+                  </div>
+                  <div class="d-flex align-items-baseline justify-content-start gap-2 mb-3">
+                       <div class="number-sort "> 6 </div>
+                            <p class="p-color pt-2"
+                              >Serve immediately over steamed rice or noodles.</p
+                            >
+                  </div>
+                     
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="contact-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="contact-tab"
+                    tabindex="0"
+                  >
+                   <div class="row mt-3 g-3 overflow-auto">
+                    <div class="col-6">
+                      <div class="d-flex justify-content-between align-items-center py-3 px-2 bg-light rounded-3">
+                        <div class="d-flex justify-content-center align-items-center">
+                          <div class="icon icon-one"><i class="fa-solid fa-fire"></i></div>
+                          <span>Calories</span>
+                        </div>
+                        <span class="caloris-value">320 kcal</span>
+                      </div>
+                    </div>
+                   
+                    <div class="col-6">
+                      <div class="d-flex justify-content-between align-items-center py-3 px-2 bg-light rounded-3">
+                        <div class="d-flex justify-content-center align-items-center">
+                          <div class="icon icon-two"><i class="fa-solid fa-dumbbell"></i></div>
+                          <span>Protein</span>
+                        </div>
+                        <span class="caloris-value">34g</span>
+                      </div>
+                    </div>
+                  
+                    <div class="col-6">
+                      <div class="d-flex justify-content-between align-items-center py-3 px-2 bg-light rounded-3">
+                        <div class="d-flex justify-content-center align-items-center">
+                          <div class="icon icon-three"><i class="fa-solid fa-wheat-awn"></i></div>
+                          <span>Carbohydrates</span>
+                        </div>
+                        <span class="caloris-value">18g</span>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="d-flex justify-content-between align-items-center py-3 px-2 bg-light rounded-3">
+                        <div class="d-flex justify-content-center align-items-center">
+                          <div class="icon icon-four"><i class="fa-solid fa-droplet"></i></div>
+                          <span>Fat</span>
+                        </div>
+                        <span class="caloris-value">12g</span>
+                      </div>
+                    </div>
+                     <div class="col-6">
+                      <div class="d-flex justify-content-between align-items-center py-3 px-2 bg-light rounded-3">
+                        <div class="d-flex justify-content-center align-items-center">
+                          <div class="icon icon-five"><i class="fa-solid fa-seedling"></i></div>
+                          <span>Fiber</span>
+                        </div>
+                        <span class="caloris-value">5g</span>
+                        
+                      </div>
+                    </div>
+                     <div class="col-6">
+                      <div class="d-flex justify-content-between align-items-center py-3 px-2 bg-light rounded-3">
+                        <div class="d-flex justify-content-center align-items-center">
+                          <div class="icon icon-six"><i class="fa-solid fa-cube"></i></div>
+                          <span>Calories</span>
+                        </div>
+                        <span class="caloris-value">840mg</span>
+                        
+                      </div>
+                    </div>
+                    
+                   </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="chef-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="chef-tab"
+                    tabindex="0"
+                  >
+                     
+                  <div class="chef-content mt-3 p-2 d-flex  align-items-start align-items-baseline gap-2">
+                       <i class="fa-solid fa-circle-check icon-one"></i>
+                       <p class="p-color">Cut all ingredients before starting to cook</p>
+                  </div>
+                  <div class="chef-content mt-3 p-2 d-flex  align-items-start align-items-baseline gap-2">
+                       <i class="fa-solid fa-circle-check icon-one"></i>
+                       <p class="p-color">Keep heat high for authentic stir-fry texture</p>
+                  </div>
+                  <div class="chef-content mt-3 p-2 d-flex  align-items-start align-items-baseline gap-2">
+                       <i class="fa-solid fa-circle-check icon-one"></i>
+                       <p class="p-color">Don't overcrowd the wok or vegetables will steamk</p>
+                  </div>
+                  <div class="chef-content mt-3 p-2 d-flex  align-items-start align-items-baseline gap-2">
+                       <i class="fa-solid fa-circle-check icon-one"></i>
+                       <p class="p-color">Add cashews or peanuts for extra crunch</p>
+                  </div>
+                  </div>
+                
+                </div>
+
+                <button class="try-btn" onclick="displayMeal()">
+                  <i class="fa-solid fa-rotate"></i>
+                  Try Another Recipe
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
