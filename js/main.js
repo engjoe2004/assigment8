@@ -233,13 +233,23 @@ var arr = [
   }
 ];
 
+var lastIndex = -1;
+
 function displayMeal() {
-  // Pick one random meal index from the array
   var randomIndex = Math.floor(Math.random() * arr.length);
+
+  // Keep generating a new index if it matches the previous one
+  while (randomIndex === lastIndex && arr.length > 1) {
+    randomIndex = Math.floor(Math.random() * arr.length);
+  }
+
+  // Save current index as lastIndex for the next click
+  lastIndex = randomIndex;
+
   var meal = arr[randomIndex];
 
   var cartona = `
-    <div class="col-12 col-md-5 p-0">
+    <div class="col-5 p-0">
       <div class="food-img position-relative">
         <img src="${meal.imgCover}" alt="${meal.name}" class="rounded-start-5" />
         <div class="rate">
@@ -270,7 +280,7 @@ function displayMeal() {
       </div>
     </div>
 
-    <div class="col-12 col-md-7">
+    <div class="col-7">
       <div class="py-4 px-3 mt-3">
         <div class="d-flex justify-content-between align-items-center">
           <div>
@@ -289,7 +299,6 @@ function displayMeal() {
           </div>
         </div>
 
-        <!-- Navigation Tabs -->
         <ul class="nav nav-tabs d-flex align-items-center justify-content-between" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab">
@@ -318,7 +327,6 @@ function displayMeal() {
         </ul>
 
         <div class="tab-content mt-3 border-top border-bottom" id="myTabContent">
-          <!-- Ingredients -->
           <div class="tab-pane fade show active my-3 bg-pink p-3 rounded-4" id="home-tab-pane" role="tabpanel">
             <ul class="list-unstyled">
               ${meal.ingredients.map((ing, idx) => `
@@ -330,7 +338,6 @@ function displayMeal() {
             </ul>
           </div>
 
-          <!-- Instructions -->
           <div class="tab-pane fade bg-pink p-3" id="profile-tab-pane" role="tabpanel">
             ${meal.instructions.map((step, idx) => `
               <div class="d-flex align-items-baseline justify-content-start gap-2 mb-3">
@@ -340,7 +347,6 @@ function displayMeal() {
             `).join('')}
           </div>
 
-          <!-- Nutrition -->
           <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel">
             <div class="row mt-3 g-3 overflow-auto">
               <div class="col-6">
@@ -400,7 +406,6 @@ function displayMeal() {
             </div>
           </div>
 
-          <!-- Chef Tips -->
           <div class="tab-pane fade" id="chef-tab-pane" role="tabpanel">
             ${meal.tips.map(tip => `
               <div class="chef-content mt-3 p-2 d-flex align-items-baseline gap-2">
@@ -420,3 +425,6 @@ function displayMeal() {
 
   dataRow.innerHTML = cartona;
 }
+
+// Initial Call
+displayMeal();
