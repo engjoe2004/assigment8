@@ -1,6 +1,4 @@
 
-var dataRow = document.getElementById('dataRow');
-
 var arr = [
   {
     name: "Chicken Tikka Masala",
@@ -233,29 +231,58 @@ var arr = [
   }
 ];
 
-var lastIndex = -1;
+var lastIndex ;
 
 function displayMeal() {
   var randomIndex = Math.floor(Math.random() * arr.length);
 
   // Keep generating a new index if it matches the previous one
-  while (randomIndex === lastIndex && arr.length > 1) {
+  while (randomIndex === lastIndex) {
     randomIndex = Math.floor(Math.random() * arr.length);
   }
 
   // Save current index as lastIndex for the next click
   lastIndex = randomIndex;
 
-  var meal = arr[randomIndex];
+  var ingredientsData = ``;
+  for (var index = 0; index < arr[randomIndex].ingredients.length; index++) {
+    ingredientsData += `<li class="d-flex align-items-start mb-2 gap-2">
+                  <span class="number-sort">${[index]}</span>
+                  <span class="text-secondary">${arr[randomIndex].ingredients[index]}</span>
+                </li>`
+    
+  }
 
-  var cartona = `
+   var instructionsData = ``;
+  for (var i = 0; i < arr[randomIndex].instructions.length; i++) {
+    instructionsData += `<li class="d-flex align-items-start mb-2 gap-2">
+                  <span class="number-sort">${[i]}</span>
+                  <span class="text-secondary">${arr[randomIndex].instructions[i]}</span>
+                </li>`
+    
+  }
+
+  var tipData = ``
+
+  for (var s = 0; s < arr[randomIndex].tips.length; s++) {
+    
+    tipData += `
+      <div class="chef-content mt-3 p-2 d-flex align-items-baseline gap-2">
+                <i class="fa-solid fa-circle-check icon-one"></i>
+                <p class="p-color">${arr[randomIndex].tips[s]}</p>
+              </div>`
+    
+  }
+ 
+
+  document.getElementById('dataRow').innerHTML = `
     <div class="col-5 p-0">
       <div class="food-img position-relative">
-        <img src="${meal.imgCover}" alt="${meal.name}" class="rounded-start-5" />
+        <img src="${arr[randomIndex].imgCover}" alt="${arr[randomIndex].name}" class="rounded-start-5" />
         <div class="rate">
           <i class="fa-solid fa-star text-warning"></i>
-          <span class="p-color fw-bold">${meal.ratingsAverage}</span>
-          <span class="text-secondary">(${meal.ratingsQuantity})</span>
+          <span class="p-color fw-bold">${arr[randomIndex].ratingsAverage}</span>
+          <span class="text-secondary">(${arr[randomIndex].ratingsQuantity})</span>
         </div>
 
         <div class="info-food">
@@ -263,17 +290,17 @@ function displayMeal() {
             <div class="d-flex flex-column align-items-center justify-content-center gap-1">
               <i class="fa-solid fa-clock fs-4 text-warning"></i>
               <span class="text-secondary">Prep Time</span>
-              <span class="p-color fw-bold">${meal.prepTime}</span>
+              <span class="p-color fw-bold">${arr[randomIndex].prepTime}</span>
             </div>
             <div class="d-flex flex-column align-items-center justify-content-center gap-1">
               <i class="fa-solid fa-fire-burner fs-4 text-danger"></i>
               <span class="text-secondary">Cook Time</span>
-              <span class="p-color fw-bold">${meal.cookTime}</span>
+              <span class="p-color fw-bold">${arr[randomIndex].cookTime}</span>
             </div>
             <div class="d-flex flex-column align-items-center justify-content-center gap-1">
               <i class="fa-solid fa-users fs-4 text-primary"></i>
               <span class="text-secondary">Servings</span>
-              <span class="p-color fw-bold">${meal.servings}</span>
+              <span class="p-color fw-bold">${arr[randomIndex].servings}</span>
             </div>
           </div>
         </div>
@@ -285,12 +312,12 @@ function displayMeal() {
         <div class="d-flex justify-content-between align-items-center">
           <div>
             <div class="mb-2">
-              <span class="badge badge-first p-2 rounded-5 me-2">${meal.difficulty}</span>
-              <span class="badge badge-second p-2 rounded-5">${meal.category}</span>
+              <span class="badge badge-first p-2 rounded-5 me-2">${arr[randomIndex].difficulty}</span>
+              <span class="badge badge-second p-2 rounded-5">${arr[randomIndex].category}</span>
             </div>
             <div>
-              <h3 class="fw-bold">${meal.name}</h3>
-              <p class="text-secondary">${meal.description}</p>
+              <h3 class="fw-bold">${arr[randomIndex].name}</h3>
+              <p class="text-secondary">${arr[randomIndex].description}</p>
             </div>
           </div>
           <div class="d-flex flex-row gap-2">
@@ -329,22 +356,12 @@ function displayMeal() {
         <div class="tab-content mt-3 border-top border-bottom" id="myTabContent">
           <div class="tab-pane fade show active my-3 bg-pink p-3 rounded-4" id="home-tab-pane" role="tabpanel">
             <ul class="list-unstyled">
-              ${meal.ingredients.map((ing, idx) => `
-                <li class="d-flex align-items-start mb-2 gap-2">
-                  <span class="number-sort">${idx + 1}</span>
-                  <span class="text-secondary">${ing}</span>
-                </li>
-              `).join('')}
+              ${ingredientsData}
             </ul>
           </div>
 
           <div class="tab-pane fade bg-pink p-3" id="profile-tab-pane" role="tabpanel">
-            ${meal.instructions.map((step, idx) => `
-              <div class="d-flex align-items-baseline justify-content-start gap-2 mb-3">
-                <div class="number-sort">${idx + 1}</div>
-                <p class="p-color pt-2">${step}</p>
-              </div>
-            `).join('')}
+            ${instructionsData}
           </div>
 
           <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel">
@@ -355,7 +372,7 @@ function displayMeal() {
                     <div class="icon icon-one"><i class="fa-solid fa-fire"></i></div>
                     <span>Calories</span>
                   </div>
-                  <span class="caloris-value">${meal.nutrition.calories}</span>
+                  <span class="caloris-value">${arr[randomIndex].nutrition.calories}</span>
                 </div>
               </div>
               <div class="col-6">
@@ -364,7 +381,7 @@ function displayMeal() {
                     <div class="icon icon-two"><i class="fa-solid fa-dumbbell"></i></div>
                     <span>Protein</span>
                   </div>
-                  <span class="caloris-value">${meal.nutrition.protein}</span>
+                  <span class="caloris-value">${arr[randomIndex].nutrition.protein}</span>
                 </div>
               </div>
               <div class="col-6">
@@ -373,7 +390,7 @@ function displayMeal() {
                     <div class="icon icon-three"><i class="fa-solid fa-wheat-awn"></i></div>
                     <span>Carbohydrates</span>
                   </div>
-                  <span class="caloris-value">${meal.nutrition.carbs}</span>
+                  <span class="caloris-value">${arr[randomIndex].nutrition.carbs}</span>
                 </div>
               </div>
               <div class="col-6">
@@ -382,7 +399,7 @@ function displayMeal() {
                     <div class="icon icon-four"><i class="fa-solid fa-droplet"></i></div>
                     <span>Fat</span>
                   </div>
-                  <span class="caloris-value">${meal.nutrition.fat}</span>
+                  <span class="caloris-value">${arr[randomIndex].nutrition.fat}</span>
                 </div>
               </div>
               <div class="col-6">
@@ -391,7 +408,7 @@ function displayMeal() {
                     <div class="icon icon-five"><i class="fa-solid fa-seedling"></i></div>
                     <span>Fiber</span>
                   </div>
-                  <span class="caloris-value">${meal.nutrition.fiber}</span>
+                  <span class="caloris-value">${arr[randomIndex].nutrition.fiber}</span>
                 </div>
               </div>
               <div class="col-6">
@@ -400,19 +417,14 @@ function displayMeal() {
                     <div class="icon icon-six"><i class="fa-solid fa-cube"></i></div>
                     <span>Sodium</span>
                   </div>
-                  <span class="caloris-value">${meal.nutrition.sodium}</span>
+                  <span class="caloris-value">${arr[randomIndex].nutrition.sodium}</span>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="tab-pane fade" id="chef-tab-pane" role="tabpanel">
-            ${meal.tips.map(tip => `
-              <div class="chef-content mt-3 p-2 d-flex align-items-baseline gap-2">
-                <i class="fa-solid fa-circle-check icon-one"></i>
-                <p class="p-color">${tip}</p>
-              </div>
-            `).join('')}
+            ${tipData}
           </div>
         </div>
 
@@ -423,7 +435,7 @@ function displayMeal() {
       </div>
     </div>`;
 
-  dataRow.innerHTML = cartona;
+ 
 }
 
 // Initial Call

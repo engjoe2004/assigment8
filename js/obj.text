@@ -1,0 +1,47 @@
+ {
+    name: "Chicken Tikka Masala",
+    description: "Rich and creamy Indian curry with tender chicken pieces",
+    image: "chicken tikka masala curry with rice, indian food, professional photography",
+    imgCover: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800&auto=format&fit=crop",
+    prepTime: "20 min",
+    cookTime: "30 min",
+    totalTime: 50,
+    servings: "4 people",
+    difficulty: "Intermediate",
+    category: "Asian",
+    ratingsAverage: 4.7,
+    ratingsQuantity: 389,
+    ingredients: [
+      "600g chicken breast, cubed",
+      "1 cup plain yogurt",
+      "2 tablespoons tikka masala paste",
+      "400ml coconut cream",
+      "1 onion, diced",
+      "4 cloves garlic, minced",
+      "2 tablespoons ginger, grated",
+      "400g canned tomatoes",
+      "Fresh cilantro for garnish"
+    ],
+    instructions: [
+      "Marinate chicken in half the yogurt and 1 tablespoon tikka paste for at least 30 minutes.",
+      "Heat oil in a large pan, cook marinated chicken until browned. Remove and set aside.",
+      "In the same pan, sauté onion until soft. Add garlic and ginger, cook for 1 minute.",
+      "Add remaining tikka paste and canned tomatoes. Simmer for 10 minutes.",
+      "Stir in coconut cream and remaining yogurt. Add chicken back to the pan.",
+      "Simmer for 15 minutes until sauce thickens. Garnish with cilantro and serve with rice."
+    ],
+    nutrition: {
+      calories: "450 kcal",
+      protein: "38g",
+      carbs: "24g",
+      fat: "22g",
+      fiber: "4g",
+      sodium: "760mg"
+    },
+    tips: [
+      "Marinate chicken overnight for deeper flavor",
+      "Use full-fat coconut cream for richest sauce",
+      "Adjust spice level by varying the tikka paste amount",
+      "Serve with naan bread and basmati rice"
+    ]
+  }
